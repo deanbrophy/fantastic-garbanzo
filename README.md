@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/deanbrophy/fantastic-garbanzo.svg?branch=master)](https://travis-ci.org/deanbrophy/fantastic-garbanzo)
 
-Elixircast is an attempt to learn Elixir and Elm for the Author. Instead of solution drive, the stack was determined first:
+Elixircast is an attempt to learn Elixir and Elm. Instead of problem solving, I'm going stack first:
 
 * Back-end
     - Elixir

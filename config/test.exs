@@ -15,5 +15,5 @@ config :elixircast, Elixircast.Repo,
   username: "postgres",
   password: "",
   database: "elixircast_test",
-  hostname: "192.168.99.100",
+  hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

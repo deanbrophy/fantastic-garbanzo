@@ -1,0 +1,13 @@
+language: elixir
+elixir: 1.2.1
+services:
+  - postgres
+otp_release:
+  - 18.0
+sudo: false
+before_script:
+  - psql -c 'create database elixircast_test;' -U postgres
+  - mix deps.get --only test
+script:
+  - mix test
+

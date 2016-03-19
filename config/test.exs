@@ -13,7 +13,7 @@ config :logger, level: :warn
 config :elixircast, Elixircast.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "elixirPodcast",
+  password: "",
   database: "elixircast_test",
   hostname: "192.168.99.100",
   pool: Ecto.Adapters.SQL.Sandbox

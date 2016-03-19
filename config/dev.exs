@@ -36,7 +36,7 @@ config :phoenix, :stacktrace_depth, 20
 config :elixircast, Elixircast.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "elixirPodcast",
+  password: "",
   database: "elixircast_dev",
   hostname: "192.168.99.100",
   pool_size: 10

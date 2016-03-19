@@ -1,5 +1,19 @@
 # Elixircast
 
+[![Build Status](https://travis-ci.org/deanbrophy/fantastic-garbanzo.svg?branch=master)](https://travis-ci.org/deanbrophy/fantastic-garbanzo)
+
+Elixircast is an attempt to learn Elixir and Elm for the Author. Instead of solution drive, the stack was determined first:
+
+* Back-end
+    - Elixir
+    - Phoenix
+    - Postgres
+* Front-End
+    - Elm
+    - Semantic-UI
+
+## Install
+
 To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`

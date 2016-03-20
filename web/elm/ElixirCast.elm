@@ -3,4 +3,6 @@ module ElixirCast where
 import Html
 
 main =
-  Html.text "I'm so hyped that I got Phoenix running on Elixir with Semantic UI! But will this update now?"
+  Html.text "Yeah, I'm excited. A little bit of Elixir running Phoenix for a web server. Add in Elm on top of that.
+    My largest challenge was getting Semantic-UI. 
+        I solved the issue of not having to run gulp each time. It works well."

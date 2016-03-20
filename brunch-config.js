@@ -2,36 +2,32 @@ exports.config = {
     // See http://brunch.io/#documentation for docs.
     files: {
         javascripts: {
-            // joinTo: "js/app.js"
+            joinTo: "js/app.js"
 
             // To use a separate vendor.js bundle, specify two files path
             // https://github.com/brunch/brunch/blob/stable/docs/config.md#files
-            joinTo: {
-                "js/app.js": [/(^web\/static\/js)|(deps)|(node_modules)/ ] }
+            // joinTo: {
+            //     "js/app.js": [/(^web\/static\/js)|(deps)|(node_modules)/]
+            // }
 
-                //
-                // To change the order of concatenation of files, explicitly mention here
-                // https://github.com/brunch/brunch/tree/master/docs#concatenation
-                // order: {
-                //   before: [
-                //     "web/static/vendor/js/jquery-2.1.1.js",
-                //     "web/static/vendor/js/bootstrap.min.js"
-                //   ]
-                // }
-           
+            //
+            // To change the order of concatenation of files, explicitly mention here
+            // https://github.com/brunch/brunch/tree/master/docs#concatenation
+            // order: {
+            //   before: [
+            //     "web/static/vendor/js/jquery-2.1.1.js",
+            //     "web/static/vendor/js/bootstrap.min.js"
+            //   ]
+            // }
+
             // ,
             // order: {
             //     before: ['*jquery.min.js']
             // }
         },
         stylesheets: {
-            joinTo: {
-                "css/app.css": ["web/static/css",
-                    "web/static/vendor/semantic/semantic.less",
-                    "web/static/vendor/semantic/definitions/**/*.less",
-                    "web/static/vendor/semantic/definitions/globals/reset.less"
-                ]
-            }
+            joinTo: "css/app.css"
+
         },
         templates: {
             joinTo: "js/app.js"
@@ -43,16 +39,21 @@ exports.config = {
         // By default, we set this to "/web/static/assets". Files in this directory
         // will be copied to `paths.public`, which is "priv/static" by default.
         assets: /^(web\/static\/assets)/,
-        ignored: /^(web\/static\/vendor\/.*js$)/
+        //Do not need anything minified. Will update configuration to do it in one shot.
+        ignored: ["*.min.*", "theme.config"]
     },
 
-    // Phoenix paths configuration
+    // Phoenix, elm, and semantic paths configuration
     paths: {
         // Dependencies and current project directories to watch
         watched: [
             "web/static",
             "test/static",
-            "web/elm/ElixirCast.elm"
+            "web/elm/ElixirCast.elm",
+            // I'm not proud of these next two settings, but I did what I had to do
+            // I want to make sure the gulp build task fires off if this is updated.
+            "web/semantic/src/theme.config"
+
         ],
 
         // Where to compile files to
@@ -64,12 +65,13 @@ exports.config = {
         elmBrunch: {
             elmFolder: 'web/elm',
             mainModules: ['ElixirCast.elm'],
-            outputFolder: '../static/vendor'
+            outputFolder: '../static/vendor/elm'
         },
         babel: {
             // Do not use ES6 compiler in vendor code
-            ignore: [/web\/static\/vendor/]
+            ignore: [/web\/static\/vendor/, /web\/semantic\/dist/]
         }
+        
     },
 
     modules: {

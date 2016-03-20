@@ -28,3 +28,10 @@ erl_crash.dump
 elm-stuff/
 # elm-repl generated files
 repl-temp-*
+# project elm specific files
+/web/static/vendor/
+
+
+# Semantic stuff
+/web/semantic/
+!/web/semantic/src

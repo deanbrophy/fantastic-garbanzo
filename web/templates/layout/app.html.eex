@@ -15,7 +15,7 @@
     <div class="ui inverted middle aligned center aligned segment">
         <div class="ui text container">
         <h1 class="ui inverted header">
-          Alright, it's bed time.
+          I'm glad with how far I got
           </h1>
         <%= render @view_module, @view_template, assigns %>
         </div>

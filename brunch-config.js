@@ -7,21 +7,31 @@ exports.config = {
             // To use a separate vendor.js bundle, specify two files path
             // https://github.com/brunch/brunch/blob/stable/docs/config.md#files
             joinTo: {
-             "js/app.js": /^(web\/static\/js)|(web\/static\/vendor)|(deps)|(node_modules)/
-           
-            //
-            // To change the order of concatenation of files, explicitly mention here
-            // https://github.com/brunch/brunch/tree/master/docs#concatenation
+                "js/app.js": [/^(web\/static\/js)|(deps)|(node_modules)/, "web/static/vendor/*.js"]
+
+                //
+                // To change the order of concatenation of files, explicitly mention here
+                // https://github.com/brunch/brunch/tree/master/docs#concatenation
+                // order: {
+                //   before: [
+                //     "web/static/vendor/js/jquery-2.1.1.js",
+                //     "web/static/vendor/js/bootstrap.min.js"
+                //   ]
+                // }
+            }
+            // ,
             // order: {
-            //   before: [
-            //     "web/static/vendor/js/jquery-2.1.1.js",
-            //     "web/static/vendor/js/bootstrap.min.js"
-            //   ]
+            //     before: ['*jquery.min.js']
             // }
-             }  
         },
         stylesheets: {
-            joinTo: "css/app.css"
+            joinTo: {
+                "css/app.css": ["web/static/css",
+                    "web/static/vendor/semantic/semantic.less",
+                    "web/static/vendor/semantic/definitions/**/*.less",
+                    "web/static/vendor/semantic/definitions/globals/reset.less"
+                ]
+            }
         },
         templates: {
             joinTo: "js/app.js"

@@ -38,9 +38,7 @@ exports.config = {
         // This option sets where we should place non-css and non-js assets in.
         // By default, we set this to "/web/static/assets". Files in this directory
         // will be copied to `paths.public`, which is "priv/static" by default.
-        assets: /^(web\/static\/assets)/,
-        //Do not need anything minified. Will update configuration to do it in one shot.
-        ignored: ["*.min.*", "theme.config"]
+        assets: /^(web\/static\/assets)/
     },
 
     // Phoenix, elm, and semantic paths configuration
@@ -49,9 +47,7 @@ exports.config = {
         watched: [
             "web/static",
             "test/static",
-            "web/elm/ElixirCast.elm",
-            // I'm not proud of these next two settings, but I did what I had to do
-            // I want to make sure the gulp build task fires off if this is updated.
+           // Theme updates of semantic should cause a rebuild.
             "web/semantic/src/theme.config"
 
         ],

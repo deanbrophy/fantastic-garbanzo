@@ -7,7 +7,7 @@ exports.config = {
             // To use a separate vendor.js bundle, specify two files path
             // https://github.com/brunch/brunch/blob/stable/docs/config.md#files
             joinTo: {
-                "js/app.js": [/^(web\/static\/js)|(deps)|(node_modules)/, "web/static/vendor/elixircast.js"]
+                "js/app.js": [/(^web\/static\/js)|(deps)|(node_modules)/ ] }
 
                 //
                 // To change the order of concatenation of files, explicitly mention here
@@ -18,7 +18,7 @@ exports.config = {
                 //     "web/static/vendor/js/bootstrap.min.js"
                 //   ]
                 // }
-            }
+           
             // ,
             // order: {
             //     before: ['*jquery.min.js']
@@ -42,7 +42,8 @@ exports.config = {
         // This option sets where we should place non-css and non-js assets in.
         // By default, we set this to "/web/static/assets". Files in this directory
         // will be copied to `paths.public`, which is "priv/static" by default.
-        assets: /^(web\/static\/assets)/
+        assets: /^(web\/static\/assets)/,
+        ignored: /^(web\/static\/vendor\/.*js$)/
     },
 
     // Phoenix paths configuration
@@ -81,6 +82,6 @@ exports.config = {
         enabled: true,
         // Whitelist the npm deps to be pulled in as front-end assets.
         // All other deps in package.json will be excluded from the bundle.
-        whitelist: ["phoenix", "phoenix_html", "jquery"]
+        whitelist: ["phoenix", "phoenix_html"]
     }
 };

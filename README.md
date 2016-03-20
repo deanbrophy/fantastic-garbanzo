@@ -12,6 +12,7 @@ Elixircast is an attempt to learn Elixir and Elm. Instead of problem solving, I'
     - Elm
     - Semantic-UI
 
+
 ## Install
 
 To start your Phoenix app:
@@ -24,6 +25,19 @@ To start your Phoenix app:
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+
+## Postgres Extra
+Ecto expects postres running on localhost:5432 with username "postgres" and with no password. The config is self-explanatory, but here are my commands for running it in Docker via Docker Machine on a Mac..  
+
+``` bash
+# Postgres in a named container.
+docker run --name postgres -p 5432:5432 -d postgres
+
+# Forward 5432 from the localhost to the 
+VBoxManage controlvm "default" natpf1 "tcp-port5432,tcp,,5432,,5432";
+
+```
+
 
 ## Learn more
 

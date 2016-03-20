@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Elixircast!</title>
+    <title>Woohoo</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -15,7 +15,7 @@
     <div class="ui inverted middle aligned center aligned segment">
         <div class="ui text container">
         <h1 class="ui inverted header">
-          I'm glad with how far I got
+          Elixir, Pheonix, Elm, Postgres, and Semantic UI
           </h1>
         <%= render @view_module, @view_template, assigns %>
         </div>

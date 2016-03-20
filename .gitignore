@@ -33,5 +33,6 @@ repl-temp-*
 
 
 # Semantic stuff
-/web/semantic/
-!/web/semantic/src
+/web/semantic/dist/
+/web/semantic/tasks/
+/web/seamntic/gulpfiles.js

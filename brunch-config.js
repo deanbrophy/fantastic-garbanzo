@@ -7,7 +7,7 @@ exports.config = {
             // To use a separate vendor.js bundle, specify two files path
             // https://github.com/brunch/brunch/blob/stable/docs/config.md#files
             joinTo: {
-                "js/app.js": [/^(web\/static\/js)|(deps)|(node_modules)/, "web/static/vendor/*.js"]
+                "js/app.js": [/^(web\/static\/js)|(deps)|(node_modules)/, "web/static/vendor/elixircast.js"]
 
                 //
                 // To change the order of concatenation of files, explicitly mention here

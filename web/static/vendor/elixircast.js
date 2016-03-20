@@ -10855,6 +10855,6 @@ Elm.ElixirCast.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var _op = {};
-   var main = $Html.text("I\'m running Elm in Elixir (Phoenix), bitches!!");
+   var main = $Html.text("I\'m so hyped that I got Phoenix running on Elixir with Semantic UI. !");
    return _elm.ElixirCast.values = {_op: _op,main: main};
 };

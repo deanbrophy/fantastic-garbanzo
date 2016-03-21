@@ -13,7 +13,7 @@ script:
 after_success:
 - eval "$(ssh-agent -s)"
 - pwd
-- mv .trav/ssh-config ~/.ssh/config
+- mv .travis/ssh-config ~/.ssh/config
 - chmod 600 deploy_key
 - ssh-add deploy_key
 - git remote add deploy root@dokku.deanbrophy.com:elixircast

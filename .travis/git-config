@@ -1,7 +1,0 @@
-Host dokku.deanbrophy.com
-	User				          	git
-	IdentityFile		      	~/.ssh/deploy_key
-	StrictHostKeyChecking 	no
-	PasswordAuthentication	no
-	CheckHostIP			      	no
-	BatchMode			        	yes

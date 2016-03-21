@@ -2,5 +2,5 @@ Host dokku.deanbrophy.com
 	Hostname dokku.deanbrophy.com
 	StrictHostKeyChecking no
 	PasswordAuthentication  no
-	IdentityFile ~/.ssh/id_rsa
+	IdentityFile id_rsa
 	User root

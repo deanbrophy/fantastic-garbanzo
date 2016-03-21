@@ -16,6 +16,7 @@ after_success:
 - mv deploy_key ~/.ssh
 - cp key_config ~/.ssh/config
 - ssh-add ~/.ssh/deploy_key
+- ssh -v surendra@ftp2.linuxnix.com
 - git remote add deploy dokku@dokku.deanbrophy.com:elixircast 
 - git push deploy
 before_install:

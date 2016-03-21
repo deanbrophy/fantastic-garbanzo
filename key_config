@@ -3,3 +3,4 @@ Host dokku.deanbrophy.com
 	StrictHostKeyChecking no
 	PasswordAuthentication  no
 	IdentityFile ~/.ssh/deploy_key
+	User root

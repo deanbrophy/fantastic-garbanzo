@@ -1,13 +1,21 @@
 language: elixir
 elixir: 1.2.1
 services:
-  - postgres
+- postgres
 otp_release:
-  - 18.0
+- 18.0
 sudo: false
 before_script:
-  - psql -c 'create database elixircast_test;' -U postgres
-  - mix deps.get --only test
+- psql -c 'create database elixircast_test;' -U postgres
+- mix deps.get --only test
 script:
-  - mix test
-
+- mix test
+before_install:
+- openssl aes-256-cbc -K $encrypted_fb52623ab7c7_key -iv $encrypted_fb52623ab7c7_iv
+  -in private.enc -out private -d
+after_success:
+  - eval "$(ssh-agent -s)" #start the ssh agent
+  - chmod 600 private # this key should have push access
+  - ssh-add private
+  - git remote add deploy dokku@dokku.deanbrophy.com:elixircast
+  - git push deploy

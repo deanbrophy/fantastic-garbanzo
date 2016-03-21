@@ -1,7 +1,6 @@
-Host dokku.deanbrophy.com
-	Hostname dokku.deanbrophy.com
+Host dokku.deanbrophy.com deanbrophy.com 104.131.90.199
 	StrictHostKeyChecking no
 	PasswordAuthentication  no
-	IdentityFile id_rsa
+	IdentityFile ~./ssh/id_rsa
 	User root
 	IdentitiesOnly yes

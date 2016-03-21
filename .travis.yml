@@ -14,10 +14,10 @@ after_success:
 - eval "$(ssh-agent -s)"
 - pwd
 - mv .travis/ssh-config ~/.ssh/config
-- chmod 600 deploy_key
-- ssh-add deploy_key
+- chmod 600 ~/.ssh/deploy_key
+- ssh-add ~/.ssh/deploy_key
 - git remote add deploy root@dokku.deanbrophy.com:elixircast
 - git push deploy
 dd:
 - openssl aes-256-cbc -K $encrypted_cf0e4d88cdc5_key -iv $encrypted_cf0e4d88cdc5_iv
-  -in deploy_key.enc -out deploy_key -d
+  -in deploy_key.enc -out ~/.ssh/d -d

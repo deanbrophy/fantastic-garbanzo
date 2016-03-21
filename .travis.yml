@@ -13,7 +13,7 @@ script:
 after_success:
 - eval "$(ssh-agent -s)"
 - chmod 600 deploy_key
-- mv deploya_key id_rsa && mv id_rsa ~/.ssh
+- mv deploy_key id_rsa && mv id_rsa ~/.ssh
 - cp key_config ~/.ssh/config
 - ssh-add ~/.ssh/id_rsa
 - git config --global push.default simple

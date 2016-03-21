@@ -13,10 +13,11 @@ script:
 after_success:
 - eval "$(ssh-agent -s)"
 - mv deploy_key id_rsa && mv id_rsa ~/.ssh
+- mv gssh.sh ~/.ssh
 - chmod 400 ~/.ssh/id_rsa
 - cp key_config ~/.ssh/config
 - ssh-add ~/.ssh/id_rsa
-- export GIT_SSH=gssh.sh
+- export GIT_SSH=~/.ssh/gssh.sh
 - git config --global push.default simple
 - git remote add dokku dokku@dokku.deanbrophy.com:elixircast
 - git ls-remote dokku

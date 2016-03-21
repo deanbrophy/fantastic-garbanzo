@@ -6,6 +6,8 @@
     "clean-css-brunch": "~1.8.0",
     "css-brunch": "~1.7.0",
     "elm-brunch": "~0.4.4",
+    "gulp": "^3.9.1",
+    "gulp-clone": "^1.0.0",
     "javascript-brunch": "~1.8.0",
     "less-brunch": "^2.0.0",
     "phoenix": "file:deps/phoenix",

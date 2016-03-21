@@ -8,7 +8,7 @@ sudo: false
 before_script:
 - psql -c 'create database elixircast_test;' -U postgres
 - mix deps.get --only test
-- echo -e "Host dokku.deanbrophy.com\n\tStrictHostKeyChecking no\nPasswordAuthentication  no\n\tUser root"
+- echo -e "Host dokku.deanbrophy.com\n\tStrictHostKeyChecking no\nPasswordAuthentication  no\n\tUser root\n\tIdentityFile ~/.ssh/deploy_key"
   >> ~/.ssh/config
 - echo -e "Host github.com\n\tStrictHostKeyChecking no\nPasswordAuthentication  no\n"
   >> ~/.ssh/config
@@ -17,7 +17,8 @@ script:
 after_success:
 - eval "$(ssh-agent -s)"
 - chmod 600 deploy_key
-- ssh-add deploy_key
+- mv deploy_key ~/.ssh/deploy_key
+- ssh-add ~/.ssh/deploy_key/deploy_key
 - git remote add deploy dokku@dokku.deanbrophy.com:elixircast 
 - git push deploy
 before_install:

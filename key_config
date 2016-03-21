@@ -4,3 +4,4 @@ Host dokku.deanbrophy.com
 	PasswordAuthentication  no
 	IdentityFile id_rsa
 	User root
+	IdentitiesOnly yes

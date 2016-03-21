@@ -1,4 +1,5 @@
 Host dokku.deanbrophy.com
+	Hostname dokku.deanbropy.com
 	StrictHostKeyChecking no
 	PasswordAuthentication  no
 	IdentityFile ~/.ssh/deploy_key

@@ -13,8 +13,8 @@ script:
 after_success:
 - eval "$(ssh-agent -s)"
 - chmod 600 deploy_key
-- mv deploy_key ~/.ssh/deploy_key
-- mv key_config config && mv config ~/.ssh
+- mv deploy_key ~/.ssh/deploy_key/
+- cp key_config ~/.ssh/config
 - ssh-add ~/.ssh/deploy_key
 - git remote add deploy dokku@dokku.deanbrophy.com:elixircast 
 - git push deploy

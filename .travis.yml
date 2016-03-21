@@ -14,6 +14,7 @@ script:
 - mix test
 after_success:
 - eval "$(ssh-agent -s)"
+- chmod 600 deploy_key
 - ssh-add deploy_key
 - git remote add deploy root@dokku.deanbrophy.com:elixircast
 - git push deploy

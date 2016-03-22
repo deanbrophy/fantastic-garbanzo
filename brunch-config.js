@@ -48,7 +48,9 @@ exports.config = {
             "web/static",
             "test/static",
            // Theme updates of semantic should cause a rebuild.
-            "web/semantic/src/theme.config"
+            "web/semantic/src/theme.config",
+            //Elm file
+            "web/elm/ElixirCast.elm"
 
         ],
 
